@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Effect</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .wrapper{
+
+            height: 100vh;
+            perspective: 10px;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+        .container{
+            position: relative;
+            z-index: -1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform-style: preserve-3d;
+            height: 100%;
+
+        }
+        .background{
+            transform: translateZ(-40px) scale(5);
+        }
+        .foreground{
+            transform: translateZ(-10px) scale(2);
+        }
+        h1{
+            color:aliceblue;
+        
+        }
+        .background,.foreground{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            z-index: -1 ;
+            object-fit: cover;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <img src="background.png" class="background" alt="background">
+            <img src="foreground.png" class="foreground" alt="foreground">
+            <h1>ADVENTURE</h1>
+        </div>
+    </div>
+</body>
+</html>
